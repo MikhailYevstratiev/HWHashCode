@@ -1,14 +1,18 @@
 ﻿using System;
+<<<<<<< HEAD
+using System.Threading.Tasks;
+=======
 using System.Collections.Generic;
 using System.Diagnostics;
 using HashCode.Models;
 using HashCode.Sort;
+>>>>>>> master
 
 namespace HashCode
 {
     public class MainClass
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             // Tests sorting algoritm duration
             //TestSortingCenter();
