@@ -1,12 +1,9 @@
 ﻿using System;
-<<<<<<< HEAD
 using System.Threading.Tasks;
-=======
 using System.Collections.Generic;
 using System.Diagnostics;
 using HashCode.Models;
 using HashCode.Sort;
->>>>>>> master
 
 namespace HashCode
 {
