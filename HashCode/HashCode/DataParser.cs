@@ -37,8 +37,6 @@ namespace HashCode
 
             var parsedDocumentsList = await Task.WhenAll(parseDataTaskList);
 
-
-
             return parsedDocumentsList;
         }
 
