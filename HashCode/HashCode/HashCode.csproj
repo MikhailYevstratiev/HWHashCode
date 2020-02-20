@@ -34,6 +34,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataParser.cs" />
     <Compile Include="Models\Library.cs" />
+    <Compile Include="Sort\SortingCenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
