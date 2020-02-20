@@ -21,19 +21,12 @@ namespace HashCode
 
             List<Task<IEnumerable<Library>>> parseDataTaskList = new List<Task<IEnumerable<Library>>>();
 
-            try
-            {
-                parseDataTaskList.Add(StartParseAsync(pathA));
-                parseDataTaskList.Add(StartParseAsync(fileB));
-                parseDataTaskList.Add(StartParseAsync(fileC));
-                parseDataTaskList.Add(StartParseAsync(fileD));
-                parseDataTaskList.Add(StartParseAsync(fileE));
-                parseDataTaskList.Add(StartParseAsync(fileF));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            parseDataTaskList.Add(StartParseAsync(pathA));
+            parseDataTaskList.Add(StartParseAsync(fileB));
+            parseDataTaskList.Add(StartParseAsync(fileC));
+            parseDataTaskList.Add(StartParseAsync(fileD));
+            parseDataTaskList.Add(StartParseAsync(fileE));
+            parseDataTaskList.Add(StartParseAsync(fileF));
 
             var parsedDocumentsList = await Task.WhenAll(parseDataTaskList);
 
@@ -44,18 +37,18 @@ namespace HashCode
         {
             return Task.Run(() =>
             {
-                    using (StreamReader sr = new StreamReader(path, System.Text.Encoding.Default))
-                    {
-                        List<Library> LibraryCollection = new List<Library>();
-
-                        string line = string.Empty;
-
-                        const int startReadFromLine = 2;
-
-                        int currentLine = 0;
-
-                try
+                using (StreamReader sr = new StreamReader(path, System.Text.Encoding.Default))
                 {
+                    List<Library> LibraryCollection = new List<Library>();
+
+                    string line = string.Empty;
+
+                    const int startReadFromLine = 2;
+
+                    int currentLine = 0;
+
+                    try
+                    {
                         while ((line = sr.ReadLine()) != null)
                         {
                             if (currentLine >= startReadFromLine && !string.IsNullOrEmpty(line))
@@ -83,14 +76,14 @@ namespace HashCode
 
                             currentLine++;
                         }
-                }
-                catch (Exception ex)
-                {
-                        var a = path;
-                }
-
-                        return LibraryCollection as IEnumerable<Library>;
                     }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+
+                    return LibraryCollection as IEnumerable<Library>;
+                }
             });
         }
     }
