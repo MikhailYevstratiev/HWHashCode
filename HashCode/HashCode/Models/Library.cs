@@ -5,9 +5,9 @@ namespace HashCode.Models
 {
     public class Library
     {
-        int BooksNumber;
-        int SingUpDuration;
-        int BooksPerDay;
-        List<int> BooksIDs;
+        public int BooksNumber { get; set; }
+        public int SingUpDuration { get; set; }
+        public int BooksPerDay { get; set; }
+        public List<int> BooksIDs { get; set; }
     }
 }
